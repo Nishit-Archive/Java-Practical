@@ -1,14 +1,29 @@
 import java.util.Scanner;
 
-//WAP that reads a number in meters, converts it to feet, and displays the result.
 public class Practical4 {
     public static void main(String[] args) {
-        System.out.print("Enter the value of meter:");
-        Scanner input = new Scanner(System.in);
-        Double meter = input.nextDouble();
-        Double  feet = meter * 3.28084;
-        System.out.println("Feet: " + feet);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.close();
 
+        boolean isPrime = true;
+
+        if (number <= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            System.out.println(number + " is a prime number.");
+        } else {
+            System.out.println(number + " is not a prime number.");
+        }
     }
-
 }
