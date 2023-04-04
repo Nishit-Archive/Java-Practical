@@ -16,6 +16,7 @@ public class Practical7 {
         } else {
             // If length is odd, print from the middle character
             System.out.println("Second half of the input string is: " + input.substring(halfLength + 1));
+
         }
     }
 }
